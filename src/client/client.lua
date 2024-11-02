@@ -4,7 +4,7 @@ lib.locale()
 -- // [STATEBAG] \\ --
 
 AddStateBagChangeHandler('isOnDuty', nil, function(bagName, key, value, _reserved, replicated)
-    lib.callback('lm-staffduty:cb:getPlayerSkin', false, function(skin)
+    lib.callback('illenium-appearance:server:getAppearance', false, function(skin)
         if value then
             TriggerServerEvent('txsv:checkIfAdmin')
 
@@ -15,5 +15,5 @@ AddStateBagChangeHandler('isOnDuty', nil, function(bagName, key, value, _reserve
 
             return lib.notify({ title = locale("duty_off"), type = 'infrom', position = 'top' })
         end
-    end)
+    end, GetEntityModel(PlayerPedId())
 end)
