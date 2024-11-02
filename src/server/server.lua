@@ -3,18 +3,6 @@
 lib.locale()
 local Config = require('shared.config')
 
--- // [CALLBACKS] \\ --
-
-lib.callback.register('lm-staffduty:cb:getPlayerSkin', function(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    local skin = MySQL.prepare.await('SELECT skin FROM users WHERE identifier = ?', {
-        xPlayer.identifier
-    })
-
-    return json.decode(skin)
-end)
-
 -- // [COMMANDS] \\ --
 
 lib.addCommand(Config.Command, {
@@ -48,4 +36,4 @@ RegisterNetEvent('txsv:checkIfAdmin', function()
     if not Player(src).state.isOnDuty then
         TriggerClientEvent("txcl:setAdmin", src, false, false, locale("no_access"))
     end
-end
+end)
