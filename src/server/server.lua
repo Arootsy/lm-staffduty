@@ -30,8 +30,7 @@ end)
 
 RegisterNetEvent('txsv:checkIfAdmin', function()
     local src = source
-    
-    Wait(100)
+    Wait(100) -- Required for txAdmin Wait server side.
     
     if not Player(src).state.isOnDuty then
         TriggerClientEvent("txcl:setAdmin", src, false, false, locale("no_access"))
