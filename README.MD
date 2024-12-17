@@ -27,7 +27,7 @@ With this resource, server administrators can:
 
 ## Code Examples
 
-**Client-side Check:**
+**Client-side Check:** (Not Recommended)
 
 ```lua
 if LocalPlayer.state.isOnDuty then
