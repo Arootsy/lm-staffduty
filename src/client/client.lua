@@ -15,5 +15,5 @@ AddStateBagChangeHandler('isOnDuty', nil, function(bagName, key, value, _reserve
 
             return lib.notify({ title = locale("duty_off"), type = 'infrom', position = 'top' })
         end
-    end, GetEntityModel(cache.ped)
+    end, GetEntityModel(cache.ped))
 end)
