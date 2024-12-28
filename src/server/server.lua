@@ -2,17 +2,7 @@ local Config = require 'shared.config'
 
 lib.addCommand(Config.Command, {
     help = locale('command_help'),
-    restricted = function()
-        local restricted = {}
-
-        for group, allowed in pairs(Config.AllowedGroups) do
-            if allowed then
-                table.insert(restricted, 'group.' .. group)
-            end
-        end
-
-        return restricted
-    end,
+    restricted = Config.AllowedGroups,
 }, function(source)
     local state = Player(source).state
     state.isOnDuty = not state.isOnDuty

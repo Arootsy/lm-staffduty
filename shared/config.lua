@@ -3,9 +3,8 @@ local Config = {}
 Config.Command = { 'staffdienst', 'staffduty', 'sd' } -- Config.Command = 'staffduty' IS ALSO POSSIBLE
 
 Config.AllowedGroups = {
-    ['user'] = false,
-    ['admin'] = true,
-    ['superadmin'] = true
+    'group.admin',
+    'group.superadmin',
 }
 
 Config.Outfits = {
