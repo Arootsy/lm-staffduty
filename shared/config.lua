@@ -1,11 +1,11 @@
 local Config = {}
 
-Config.Command = { "staffdienst", "staffduty", "sd" } -- ALSO Config.Command = "staffduty" IS POSSIBLE
+Config.Command = { 'staffdienst', 'staffduty', 'sd' } -- Config.Command = 'staffduty' IS ALSO POSSIBLE
 
 Config.AllowedGroups = {
-    ["user"] = false,
-    ["admin"] = true,
-    ["superadmin"] = true
+    ['user'] = false,
+    ['admin'] = true,
+    ['superadmin'] = true
 }
 
 Config.Outfits = {

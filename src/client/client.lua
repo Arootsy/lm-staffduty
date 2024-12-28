@@ -1,19 +1,12 @@
--- // [STARTUP] \\ --
-lib.locale()
-
--- // [STATEBAG] \\ --
-
-AddStateBagChangeHandler('isOnDuty', nil, function(bagName, key, value, _reserved, replicated)
+AddStateBagChangeHandler('isOnDuty', nil, function(_, _, value)
     lib.callback('illenium-appearance:server:getAppearance', false, function(skin)
         if value then
             TriggerServerEvent('txsv:checkIfAdmin')
-
-            return lib.notify({ title = locale("duty_on"), type = 'infrom', position = 'top' })
         else
             TriggerEvent('skinchanger:loadSkin', skin)
-            TriggerEvent('txcl:setAdmin', false, false, locale("no_access"))
-
-            return lib.notify({ title = locale("duty_off"), type = 'infrom', position = 'top' })
+            TriggerEvent('txcl:setAdmin', false, false, locale('no_access'))
         end
-    end, GetEntityModel(cache.ped)
+
+        lib.notify({ title = value and locale('duty_on') or locale('duty_off'), type = 'info' })
+    end, GetEntityModel(cache.ped))
 end)
