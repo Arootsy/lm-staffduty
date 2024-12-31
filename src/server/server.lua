@@ -1,5 +1,5 @@
 local Config = require 'config.shared_config'
-local ServerConfig = require 'cofnig.server_config'
+local ServerConfig = require 'config.server_config'
 
 lib.addCommand(Config.Command, {
     help = locale('command_help'),
