@@ -12,7 +12,8 @@ dependencies {
 }
 
 shared_scripts {
-    '@ox_lib/init.lua'
+    '@ox_lib/init.lua',
+    'config/shared_config.lua'	
 }
 
 client_scripts {
@@ -20,12 +21,13 @@ client_scripts {
 }
 
 server_scripts {
-    'src/server/*.lua'
+    'src/server/*.lua',
+    'config/server_config.lua
+	
 }
 
 files {
-    'locales/*.json',
-    'shared/*.lua'
+    'locales/*.json'
 }
 
 ox_libs {
